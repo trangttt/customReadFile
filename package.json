@@ -1,0 +1,15 @@
+{
+  "name": "readfile",
+  "version": "1.0.0",
+  "description": "Read a file",
+  "main": "testReadFile.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "keccak": "^1.4.0",
+    "mocha": "^5.0.5"
+  }
+}
