@@ -91,9 +91,10 @@ function readFile(filePath) {
     for ( var i=0; i < lines.length; i++){
         // skip the last empty line
         if ("" !== lines[i].trim()) {
-            var parts = lines[i].split(", ")
+            var raw = lines[i].replace(' ', '')
+            var parts = raw.split(",")
 
-            var address = parts[0]
+            var address = parts[0].trim()
             var tokenNumber = parseInt(parts[1])
 
             // only keep non-negative token and valid address
