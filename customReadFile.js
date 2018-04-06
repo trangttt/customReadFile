@@ -25,6 +25,7 @@ var isAddress = function (address) {
 
 /**
  * Checks if the given string is a checksummed address
+ * WARN: address like 0x111111111111111111111111111111111111111111 still pass this test.!!!!!
  *
  * @method isChecksumAddress
  * @param {String} address the given HEX adress
@@ -117,8 +118,9 @@ function readFile(filePath) {
 
 if (require.main === module) {
     // readFile('test.txt')
-    readFolder('data')
-    // var right = "0xFe12fB137a35aE46a021272440F5505E1fd4e7d9"
+    // readFolder('data')
+    var right = "0xFe12fB137a35aE46a021272440F5505E1fd4e7d9"
+    console.log(/^(0x)?[0-9a-f]{40}$/i.test(right))
     // var wrong = "0xFe12fb137a35ae46a021272440f5505e1fd4e7D9"
     // console.log(isChecksumAddress(right))
     // console.log(isChecksumAddress(wrong))
