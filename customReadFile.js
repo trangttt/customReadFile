@@ -95,13 +95,16 @@ function readFile(filePath) {
             var raw = lines[i].replace(' ', '')
             var parts = raw.split(",")
 
-            var address = parts[0].trim()
-            var tokenNumber = parseInt(parts[1])
+            // each line must have both address and token number
+            if (parts.length == 2){
+                var address = parts[0].trim()
+                var tokenNumber = parseInt(parts[1])
 
-            // only keep non-negative token and valid address
-            if (tokenNumber > 0 && isAddress(address)) {
-                addresses.push({"address": address,
-                                "token": tokenNumber})
+                // only keep non-negative token and valid address
+                if (tokenNumber > 0 && isAddress(address)) {
+                    addresses.push({"address": address,
+                                    "token": tokenNumber})
+                }
             }
         }
     }
